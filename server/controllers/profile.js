@@ -124,7 +124,7 @@ export const updateProfile = async (req, res) => {
 
                 const updatedProfile = await profileSchema.findByIdAndUpdate(
                     {_id:id,},
-                    req, body,
+                    req.body,
                      {
                         new: true,
                         runValidators: true,
@@ -166,7 +166,7 @@ export const deleteProfile = async (req, res) => {
             res.status(200).json({
                 
                     responseMessage: 'profile deleted successfully',
-                    updatedProfile
+                    deletedProfile
                 
             })
 
